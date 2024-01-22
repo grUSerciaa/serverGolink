@@ -31,9 +31,6 @@
      |    -hrr-
   ___|_____________
 </pre>
-        <p>${window.location.pathname}</p>
- <td><a href="`https://${window.location.pathname}${window.location.search}`" target="_blank">Go this Link   : )</td>
-        
         <h2>Table for two</h2>
         <table>
           <tbody>
@@ -43,7 +40,7 @@
           </tr>
         <tr v-for="(item,index) in themes">
         <td>Link {{index + 1}}</td>
-        <td><a :href="`https://${atob(item)}${window.location.pathname}${window.location.search}`" target="_blank">Go this Link {{index + 1}}  : )</td>
+        <td><a :href="`https://${atob(item)}${currentPathAndParams}`" target="_blank">Go this Link {{index + 1}}  : )</td>
           </tr>
         </tbody>
         </table>
@@ -55,7 +52,13 @@
             el: '#app',
             data: {
                 themes: ['d3d3LmZseWludHByby5jb20=', 'd3d3LmZseWludHBybzAxLmNvbQ==', 'd3d3LmZseWludHBybzAyLmNvbQ=='],
-                currentPathAndParams: window.location.pathname + window.location.search
+                currentPathAndParams: ''
+            },
+            mounted() {
+                this.currentPathAndParams = window.location.pathname + window.location.search;
+              console.log(this.currentPathAndParams);
+              console.log(window.location.pathname)
+              console.log(window.location.hash)
             },
         });
     </script>
