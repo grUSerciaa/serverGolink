@@ -40,7 +40,7 @@
           </tr>
         <tr v-for="(item,index) in themes">
         <td>Link {{index + 1}}</td>
-        <td><a :href="'https://' + atob(item)" target="_blank">Go this Link {{index + 1}}  : )</td>
+        <td><a :href="'https://' + atob(item) + currentPathAndParams" target="_blank">Go this Link {{index + 1}}  : )</td>
           </tr>
         </tbody>
         </table>
@@ -51,20 +51,9 @@
         new Vue({
             el: '#app',
             data: {
-                themes: ['d3d3LmZseWludHByby5jb20=', 'd3d3LmZseWludHBybzAxLmNvbQ==', 'd3d3LmZseWludHBybzAyLmNvbQ==']
+                themes: ['d3d3LmZseWludHByby5jb20=', 'd3d3LmZseWludHBybzAxLmNvbQ==', 'd3d3LmZseWludHBybzAyLmNvbQ=='],
+                currentPathAndParams: window.location.pathname + window.location.search;
             },
-            methods: {
-                decodeBase64(encodedStr) {
-                    return atob(encodedStr);
-                },
-                appendParams(url) {
-                    const currentUrl = window.location.href;
-                    const urlObj = new URL(currentUrl);
-                    const path = urlObj.pathname;
-                    const params = urlObj.search;
-                    return url + path + params;
-                }
-            }
         });
     </script>
   </body>
