@@ -40,7 +40,7 @@
           </tr>
         <tr v-for="(item,index) in themes">
         <td>Link {{index + 1}}</td>
-        <td><a :href="`https://${atob(item)}${currentPathAndParams}`" target="_blank">Go this Link {{index + 1}}  : )</td>
+        <td><a :href="https://${atob(item)} + '/' + window.location.hash" target="_blank">Go this Link {{index + 1}}  : )</td>
           </tr>
         </tbody>
         </table>
@@ -52,13 +52,6 @@
             el: '#app',
             data: {
                 themes: ['d3d3LmZseWludHByby5jb20=', 'd3d3LmZseWludHBybzAxLmNvbQ==', 'd3d3LmZseWludHBybzAyLmNvbQ=='],
-                currentPathAndParams: ''
-            },
-            mounted() {
-                this.currentPathAndParams = window.location.pathname + window.location.search;
-              console.log(this.currentPathAndParams);
-              console.log(window.location.pathname)
-              console.log(window.location.hash)
             },
         });
     </script>
