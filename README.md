@@ -1,3 +1,7 @@
+# Auto Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/472d92c3-be75-46c9-a050-a82a4c88afb7/deploy-status)](https://app.netlify.com/sites/courageous-banoffee-29cd15/deploys)
+
 # Minimal Theme
 
 [Demo the Theme](https://orderedlist.com/minimal/)
